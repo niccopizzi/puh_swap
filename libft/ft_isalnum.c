@@ -6,14 +6,16 @@
 /*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 12:49:03 by npizzi            #+#    #+#             */
-/*   Updated: 2024/04/18 19:43:24 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/10/31 11:40:44 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+bool	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0'
 			&& c <= '9'))
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }

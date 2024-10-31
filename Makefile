@@ -1,49 +1,64 @@
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -no-pie
 
 NAME = ps
 
-BONUS = checker
+BONUS_NAME = checker
 
-LIB = -I./libft -L./libft -lft -I./ft_printf -L./ft_printf -lftprintf
+LIBFT_PATH = ./libft/
+LIBFT = $(LIBFT_PATH)libft.a
 
-SRCS = ./srcs/check_input.c \
-        ./srcs/init_functions.c \
-        ./srcs/main.c \
-        ./srcs/stack_operations_one.c \
-        ./srcs/stack_operations_two.c \
-        ./srcs/utils.c \
-        ./algorithm/rotation_functions.c \
-		./algorithm/set_functions.c \
+PRINTF_PATH = ./ft_printf/
+PRINTF = $(PRINTF_PATH)libftprintf.a
+
+SRCS = ./srcs/check_input.c 				\
+        ./srcs/init_functions.c 			\
+        ./srcs/main.c 						\
+        ./srcs/stack_operations_one.c 		\
+        ./srcs/stack_operations_two.c 		\
+        ./srcs/utils.c 						\
+        ./algorithm/rotation_functions.c 	\
+		./algorithm/set_functions.c 		\
         ./algorithm/stack_sort.c
 
-BONUS_SRCS = ./check_dir/checker.c \
-			./check_dir/utils.c \
-			./check_dir/utils_two.c \
-			./check_dir/get_next_line/get_next_line.c \
-			./check_dir/get_next_line/get_next_line_utils.c
+BONUS_SRCS = ./check_dir/checker.c			 	\
+			./check_dir/utils.c 				\
+			./check_dir/utils_two.c 			\
+			./srcs/check_input.c 				\
+        	./srcs/init_functions.c 			\
+			./srcs/stack_operations_one.c 		\
+        	./srcs/stack_operations_two.c 		\
+        	./srcs/utils.c 						\
+        	./algorithm/rotation_functions.c 	\
+			./algorithm/set_functions.c 		\
+        	./algorithm/stack_sort.c
 
 all: $(NAME)
 
-lib: 
-	cd ./libft && make bonus 
-	cd ./ft_printf && make all
-
-$(NAME): lib $(SRCS)
-	@gcc $(CFLAGS) $(SRCS) -o $(NAME)  $(LIB)
+$(PRINTF):
+	@make -C ft_printf 
+	
+$(LIBFT):
+	@make -C libft bonus
+	
+$(NAME):  $(LIBFT) $(PRINTF) $(SRCS)
+	@gcc $(CFLAGS) $(SRCS) -o $(NAME)  $(LIBFT) $(PRINTF)
 	@echo "... Amazing! I managed to compile ps"
 
-bonus: lib $(SRCS) $(BONUS_SRCS)
-	@gcc $(CFLAGS) $(SRCS) $(BONUS_SRCS) -o $(BONUS) $(LIB) 
+$(BONUS_NAME): $(LIBFT) $(PRINTF) $(BONUS_SRCS)
+	@gcc $(CFLAGS) $(BONUS_SRCS) -o $(BONUS_NAME) $(LIBFT) $(PRINTF)
 	@echo "... Amazing! I managed to compile the checker"
 
 clean:
 	@$(RM) $(OBJ)
+	@make -C $(LIBFT_PATH) clean
+	@make -C $(PRINTF_PATH) clean
 	@echo "Objects files removed."
 
 fclean: clean
-	@$(RM) $(NAME)
-	@$(RM) $(BONUS)
-	@echo "$(NAME) and $(BONUS) removed."
+	@$(RM) $(NAME) $(BONUS_NAME)
+	@make -C $(LIBFT_PATH) fclean
+	@make -C $(PRINTF_PATH) fclean
+	@echo "Executables removed."
 
 re: fclean all
 

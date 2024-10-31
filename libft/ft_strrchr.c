@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicco <nicco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:37:04 by nicco             #+#    #+#             */
-/*   Updated: 2024/04/24 23:05:34 by nicco            ###   ########.fr       */
+/*   Updated: 2024/10/31 11:29:49 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	char d;
+	int		i;
+	char	d;
 
 	i = 0;
 	d = c;

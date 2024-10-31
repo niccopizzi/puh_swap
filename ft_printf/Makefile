@@ -20,7 +20,7 @@ $(NAME): $(MY_OBJECTS)
 	@echo "$< compiled."
 
 clean:
-	@$(RM) $(MY_OBJECTS) $(MY_OBJECTS_BONUS)
+	@$(RM) $(MY_OBJECTS)
 	@echo "Objects files removed."
 
 fclean: clean

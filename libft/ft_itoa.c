@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicco <nicco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:38:57 by nicco             #+#    #+#             */
-/*   Updated: 2024/04/22 22:38:38 by nicco            ###   ########.fr       */
+/*   Updated: 2024/10/31 11:27:54 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int len_num(long int n)
+static int	len_num(long int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n < 0)
@@ -29,9 +29,9 @@ static int len_num(long int n)
 	return (len);
 }
 
-static void copy_nbr(char *s, long int n, int *pos)
+static void	copy_nbr(char *s, long int n, int *pos)
 {
-	char digit;
+	char	digit;
 
 	if (n < 0)
 	{
@@ -52,11 +52,11 @@ static void copy_nbr(char *s, long int n, int *pos)
 	}
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *itoa;
-	int pos;
-	long i;
+	char	*itoa;
+	int		pos;
+	long	i;
 
 	i = n;
 	pos = 0;

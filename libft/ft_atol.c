@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npizzi <npizzi@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:29:49 by nicco             #+#    #+#             */
-/*   Updated: 2024/10/05 10:15:52 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/10/31 11:41:07 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
 
-long ft_atol(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	long atol;
-	int i;
-	int sign;
+	long	atol;
+	int		i;
+	int		sign;
 
 	atol = 0;
 	i = 0;

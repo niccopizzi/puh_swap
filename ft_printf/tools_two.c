@@ -6,7 +6,7 @@
 /*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:37:46 by nicco             #+#    #+#             */
-/*   Updated: 2024/04/30 20:55:18 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/09/03 11:12:20 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_s(va_list *ap, int *printed_chars)
 
 	s = va_arg(*ap, char *);
 	i = 0;
-	if (s == 0)
+	if (s == NULL)
 		*printed_chars += write(1, "(null)", 6);
 	else
 	{

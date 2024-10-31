@@ -45,7 +45,9 @@ MY_SOURCES =    ft_abs.c          \
                 ft_strtrim.c      \
                 ft_substr.c       \
                 ft_tolower.c      \
-                ft_toupper.c
+                ft_toupper.c      \
+                ./get_next_line/get_next_line.c         \
+                ./get_next_line/get_next_line_utils.c   
 
 	    
 MY_BONUS =      ft_lstadd_back.c    \
@@ -56,7 +58,9 @@ MY_BONUS =      ft_lstadd_back.c    \
                 ft_lstlast.c        \
                 ft_lstmap.c         \
                 ft_lstnew.c         \
-                ft_lstsize.c
+                ft_lstsize.c        \
+                ./get_next_line/get_next_line_bonus.c   \
+                ./get_next_line/get_next_line_utils_bonus.c 
 
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicco <nicco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 11:00:34 by nicco             #+#    #+#             */
-/*   Updated: 2024/04/24 23:09:04 by nicco            ###   ########.fr       */
+/*   Updated: 2024/10/31 11:29:31 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_len;
 	size_t	src_len;
 
-	if(dst == NULL)
+	if (dst == NULL)
 		dst_len = 0;
 	else
 		dst_len = ft_strlen(dst);

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npizzi <npizzi@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:59:51 by npizzi            #+#    #+#             */
-/*   Updated: 2024/10/05 14:00:18 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/10/31 11:28:45 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_min(int x, int y)
+int	ft_min(int x, int y)
 {
-    if(x<= y)
-        return(x);
-    else
-        return(y);
+	if (x <= y)
+		return (x);
+	else
+		return (y);
 }

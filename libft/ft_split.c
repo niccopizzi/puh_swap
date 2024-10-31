@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicco <nicco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:53:28 by nicco             #+#    #+#             */
-/*   Updated: 2024/04/24 23:04:34 by nicco            ###   ########.fr       */
+/*   Updated: 2024/10/31 11:29:09 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	int i;
-	int words;
+	int	i;
+	int	words;
 
 	words = 0;
 	i = 0;
@@ -28,9 +28,9 @@ static int count_words(char const *s, char c)
 	return (words);
 }
 
-static void copy_str(char *s1, char const *s2, int n)
+static void	copy_str(char *s1, char const *s2, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < n)
@@ -41,7 +41,7 @@ static void copy_str(char *s1, char const *s2, int n)
 	s1[i] = 0;
 }
 
-static int ft_create_or_clear(char **list, int i, int len)
+static int	ft_create_or_clear(char **list, int i, int len)
 {
 	list[i] = (char *)malloc((len + 1) * sizeof(char));
 	if (list[i] == NULL)
@@ -57,11 +57,11 @@ static int ft_create_or_clear(char **list, int i, int len)
 	return (0);
 }
 
-static int make_split(char **list, char const *s, char c)
+static int	make_split(char **list, char const *s, char c)
 {
-	int i;
-	int x;
-	int y;
+	int	i;
+	int	x;
+	int	y;
 
 	i = 0;
 	y = 0;
@@ -84,10 +84,10 @@ static int make_split(char **list, char const *s, char c)
 	return (0);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **split_list;
-	int words;
+	char	**split_list;
+	int		words;
 
 	if (s == NULL)
 		return (NULL);

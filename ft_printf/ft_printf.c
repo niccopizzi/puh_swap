@@ -6,7 +6,7 @@
 /*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:34:22 by nicco             #+#    #+#             */
-/*   Updated: 2024/04/30 22:03:31 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/09/03 17:04:04 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ int	ft_printf(const char *s, ...)
 	va_list	ap;
 	int		printed_chars;
 
-	va_start(ap, s);
-	printed_chars = 0;
-	if (s == NULL || s == 0 || (s[0] == '%' && s[1] == 0))
+	if (s == NULL || (s[0] == '%' && s[1] == 0))
 		return (-1);
+	printed_chars = 0;
+	va_start(ap, s);
 	print_string(s, &ap, &printed_chars);
 	va_end(ap);
 	return (printed_chars);

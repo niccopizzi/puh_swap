@@ -3,22 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npizzi <npizzi@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 08:43:56 by nicco             #+#    #+#             */
-/*   Updated: 2024/10/05 14:01:13 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/10/31 12:56:12 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "./get_next_line/get_next_line.h"
+# include <complex.h>
+# include <math.h>
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
-# include <math.h>
-# include <complex.h>
-# include <stdbool.h>
 
+# define ANSI_COLOR_RED "\x1b[31m"
+# define ANSI_COLOR_GREEN "\x1b[32m"
+# define ANSI_COLOR_YELLOW "\x1b[33m"
+# define ANSI_COLOR_BLUE "\x1b[34m"
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN "\x1b[36m"
+# define ANSI_MODE_RESET "\x1b[0m"
+
+# define MODE_BOLD "\x1b[1m"
+# define MODE_DIM "\x1b[2m"
+# define MODE_ITALIC "\x1b[3m"
+# define MODE_UNDERLINE "\x1b[4m"
+# define MODE_BLINKING "\x1b[5m"
+# define MODE_REVERSE "\x1b[7m"
+# define MODE_STRIKETHROUGH "\x1b[9m"
 
 typedef struct s_list
 {
@@ -28,7 +44,7 @@ typedef struct s_list
 
 int					ft_abs(int x);
 
-double complex 		ft_atoc(char *str); //This function returns the complex number pointed by the string passed as parameter the number has to be given in the form of a+bi
+double complex		ft_atoc(char *str);
 
 int					ft_atoi(const char *nptr);
 
@@ -38,17 +54,17 @@ void				ft_bzero(void *s, size_t n);
 
 void				*ft_calloc(size_t nmemb, size_t size);
 
-int					ft_isalnum(int c);
+bool				ft_isalnum(int c);
 
-int					ft_isalpha(int c);
+bool				ft_isalpha(int c);
 
-int					ft_isascii(int c);
+bool				ft_isascii(int c);
 
-int					ft_isdigit(int c);
+bool				ft_isdigit(int c);
 
-int 				ft_isspace(char c);
+bool				ft_isspace(char c);
 
-int					ft_isprint(int c);
+bool				ft_isprint(int c);
 
 char				*ft_itoa(int n);
 
@@ -85,9 +101,9 @@ void				*ft_memset(void *s, int c, size_t n);
 
 int					ft_min(int x, int y);
 
-int 				ft_numlen(long long num); //This function returns the total digits of the number given as parameter
+int					ft_numlen(long long num);
 
-double 				ft_pow(double base, int power);
+double				ft_pow(double base, int power);
 
 void				ft_putchar_fd(char c, int fd);
 
@@ -101,7 +117,7 @@ char				**ft_split(char const *s, char c);
 
 char				*ft_strchr(const char *s, int c);
 
-int 				ft_strcmp(const char *s1, const char *s2);
+int					ft_strcmp(const char *s1, const char *s2);
 
 char				*ft_strdup(const char *s);
 
@@ -119,12 +135,11 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
-char				*ft_strnstr(const char *big, const char *little,
-						size_t n);
+char				*ft_strnstr(const char *big, const char *little, size_t n);
 
 char				*ft_strrchr(const char *s, int c);
 
-char 				*ft_strtod(char *str, double *atod); //This function takes the string to convert to double and a pointer to a double as parameters and returns a pointer to the end of the double number in the string
+char				*ft_strtod(char *str, double *atod);
 
 char				*ft_strtrim(char const *s1, char const *set);
 

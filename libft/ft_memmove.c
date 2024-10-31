@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicco <nicco@student.42.fr>                +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:08:52 by npizzi            #+#    #+#             */
-/*   Updated: 2024/04/24 23:01:12 by nicco            ###   ########.fr       */
+/*   Updated: 2024/10/31 11:28:39 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	else
-		dest = ft_memcpy(dest,src,n);
+		dest = ft_memcpy(dest, src, n);
 	return (dest);
 }

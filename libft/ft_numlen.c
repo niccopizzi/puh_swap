@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npizzi <npizzi@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: npizzi <npizzi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 08:03:21 by npizzi            #+#    #+#             */
-/*   Updated: 2024/09/18 08:03:30 by npizzi           ###   ########.fr       */
+/*   Updated: 2024/10/31 11:28:48 by npizzi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_numlen(long long num)
+int	ft_numlen(long long num)
 {
-    int i;
+	int	i;
 
-    i = 1;
-    while ((num / 10) != 0)
-        i++;
-    return (i);
+	i = 1;
+	while ((num / 10) != 0)
+		i++;
+	return (i);
 }
